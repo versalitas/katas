@@ -140,6 +140,26 @@ var mode = "P"; // "P" pel perímentre o "A" per l'àrea
 
 // TODO: defineix la funció cercle amb dos modes
 
+
+let cercle = (r, m) => {
+    let result;
+    if (m === "P") {
+        result = (`The perimetre is ${(2 * r * Math.PI).toFixed(2)}`);
+    } else if (m === "A") {
+        result = (`The area is ${(Math.PI * r ** 2).toFixed(2)}`);
+    } else {
+        result = (`Mode option not valid`);
+    }
+
+    console.log(result);
+}
+
+cercle(radi, mode);
+
+
+var radi = 5;
+var mode = "A"; // "P" pel perímentre o "A" per l'àrea
+
 cercle(radi, mode);
 
 
@@ -148,9 +168,15 @@ cercle(radi, mode);
 var costat = 3;
 var costats = 5;
 
-// TODO: defineix la funció poligon()
 
-poligon(costat, costats);
+let poligon = (c, n) => {
+    let perimetre = c * n;
+    let apothem = c / (2 * Math.tan (Math.PI / n));
+    let area = ((c * n * apothem) / 2);
+    console.log(`A polygon with ${n} sides of ${c} each has an approximative area of ${Math.round(area)} and perimetre of ${perimetre}`);
+}
+    
+    poligon(costat, costats);
 
 
 // exercici 10: defineix una funció que et pregunti per prompt() quin item vols (samarreta, pantaló i barret), si és barret
@@ -161,6 +187,7 @@ poligon(costat, costats);
 // TODO: defineix la funció botiga()
 
 var carrito = botiga();
+
 
 console.log(carrito);  // això tornarà "Has demanat un barret de pirata (talla L)"
 
