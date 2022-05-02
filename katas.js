@@ -16,14 +16,10 @@ segon = 2;
 
 // TODO: aquí el teu codi
 
-let temp = primer;
-primer = segon; 
-segon = temp;
-
-
-
-
+[primer, segon] = [segon, primer]
 console.log(primer,segon);  // ha de mostrar 2 1
+
+
 
 
 
